@@ -1,7 +1,7 @@
 package apps.calculator;
 
 public class NumberObjectComparator implements java.util.Comparator<NumberObject> {
-    private boolean isAscending;
+    private final boolean isAscending;
 
     public NumberObjectComparator(boolean isAscending) {
         this.isAscending = isAscending;
