@@ -34,6 +34,4 @@ public class CalculationController {
     public List<NumberObject> searchNumber(@RequestParam int number, @RequestParam boolean isAscending) {
         return calculationService.searchNumber(number, isAscending, numberObjects);
     }
-
-
 }

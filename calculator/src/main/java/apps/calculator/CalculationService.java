@@ -24,7 +24,7 @@ public class CalculationService {
             }
         }
 
-        newNumberObjects.sort(new NumberObjectComparator());
+        newNumberObjects.sort(new NumberObjectComparator(isAscending));
         return newNumberObjects;
     }
 }
