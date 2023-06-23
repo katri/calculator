@@ -22,11 +22,18 @@ public class CalculationController {
     }
 
     @GetMapping("/add")
-    public List <NumberObject> addNumberObjectToList(@RequestParam int number1, @RequestParam int number2) {
+    public List<NumberObject> addNumberObjectToList(@RequestParam int number1, @RequestParam int number2) {
         NumberObject numberObject = calculationService.createNumberObject(number1, number2);
         if (numberObject != null) {
             numberObjects.add(numberObject);
         }
         return numberObjects;
     }
+
+    @GetMapping("/search")
+    public List<NumberObject> searchNumber(@RequestParam int number, @RequestParam boolean isAscending) {
+        return calculationService.searchNumber(number, isAscending, numberObjects);
+    }
+
+
 }
