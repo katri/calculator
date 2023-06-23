@@ -23,6 +23,8 @@ public class CalculationService {
                 newNumberObjects.add(numberObject);
             }
         }
+
+        newNumberObjects.sort(new NumberObjectComparator());
         return newNumberObjects;
     }
 }
