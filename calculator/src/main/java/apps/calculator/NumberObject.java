@@ -3,9 +3,9 @@ package apps.calculator;
 import java.io.Serializable;
 
 public class NumberObject implements Serializable {
-    int number1;
-    int number2;
-    int sum;
+    final int number1;
+    final int number2;
+    final int sum;
 
     public NumberObject(int number1, int number2) {
         this.number1 = number1;
