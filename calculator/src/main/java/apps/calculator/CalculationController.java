@@ -14,10 +14,19 @@ public class CalculationController {
     @Resource
     private CalculationService calculationService;
 
-    private static List<NumberObject> numberObjects = new ArrayList<>();
+    final private static List<NumberObject> numberObjects = new ArrayList<>();
 
     @GetMapping("/new")
     public NumberObject addNumbers(@RequestParam int number1, @RequestParam int number2) {
-        return calculationService.addNumbers(number1, number2);
+        return calculationService.createNumberObject(number1, number2);
+    }
+
+    @GetMapping("/add")
+    public List <NumberObject> addNumberObjectToList(@RequestParam int number1, @RequestParam int number2) {
+        NumberObject numberObject = calculationService.createNumberObject(number1, number2);
+        if (numberObject != null) {
+            numberObjects.add(numberObject);
+        }
+        return numberObjects;
     }
 }
