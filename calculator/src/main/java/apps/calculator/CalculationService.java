@@ -40,8 +40,4 @@ public class CalculationService {
         newNumberObjects.sort(new NumberObjectComparator(isAscending));
         return numberObjectMapper.toNumberObjectViews(newNumberObjects);
     }
-
-    public List<NumberObject> getNumberObjects() {
-        return numberObjects;
-    }
 }
