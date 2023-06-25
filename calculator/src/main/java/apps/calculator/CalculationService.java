@@ -8,13 +8,14 @@ import java.util.List;
 @Service
 public class CalculationService {
     private final List<NumberObject> numberObjects = new ArrayList<>();
+    NumberObjectMapper numberObjectMapper = new NumberObjectMapper();
 
-    public List<NumberObject> addNumberObjectToList(int number1, int number2) {
+    public List<NumberObjectView> addNumberObjectToList(int number1, int number2) {
         NumberObject numberObject = createNumberObject(number1, number2);
         if (numberObject != null) {
             numberObjects.add(numberObject);
         }
-        return numberObjects;
+        return numberObjectMapper.toNumberObjectViews(numberObjects);
     }
 
     public NumberObject createNumberObject(int number1, int number2) {

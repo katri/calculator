@@ -1,14 +1,16 @@
 package apps.calculator;
 
-public class NumberObject {
-    final int number1;
-    final int number2;
-    final int sum;
+import java.io.Serializable;
 
-    public NumberObject(int number1, int number2) {
+public class NumberObjectView implements Serializable {
+    int number1;
+    int number2;
+    int sum;
+
+    public NumberObjectView(int number1, int number2, int sum) {
         this.number1 = number1;
         this.number2 = number2;
-        this.sum = number1 + number2;
+        this.sum = sum;
     }
 
     public int getNumber1() {

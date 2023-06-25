@@ -19,7 +19,7 @@ public class CalculationController {
     }
 
     @GetMapping("/add")
-    public List<NumberObject> addNumberObjectToList(@RequestParam int number1, @RequestParam int number2) {
+    public List<NumberObjectView> addNumberObjectToList(@RequestParam int number1, @RequestParam int number2) {
         return calculationService.addNumberObjectToList(number1, number2);
     }
 
