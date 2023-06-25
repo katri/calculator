@@ -25,10 +25,15 @@ public class CalculationService {
         return null;
     }
 
-    public List<NumberObjectView> searchNumber(int number, boolean isAscending) {
+    public List<NumberObjectView> searchNumber(Integer number, boolean isAscending) {
         List<NumberObject> newNumberObjects = new ArrayList<>();
         for (NumberObject numberObject : numberObjects) {
-            if (number == numberObject.getNumber1() || number == numberObject.getNumber2() || number == numberObject.getSum()) {
+            if (number == null) {
+                newNumberObjects.add(numberObject);
+            }
+            else if (number == numberObject.getNumber1() ||
+                    number == numberObject.getNumber2() ||
+                    number == numberObject.getSum()) {
                 newNumberObjects.add(numberObject);
             }
         }

@@ -96,4 +96,49 @@ class CalculationServiceTest {
         assertThat(element3.getNumber2()).isEqualTo(1);
         assertThat(element3.getSum()).isEqualTo(2);
     }
+    @Test
+    void searchNumber_noNumberIdentified() {
+        CalculationService calculationService = new CalculationService();
+        calculationService.addNumberObjectToList(1, 1);
+        calculationService.addNumberObjectToList(2, 44);
+        calculationService.addNumberObjectToList(7, 44);
+        calculationService.addNumberObjectToList(3, 2);
+
+        List<NumberObjectView> actualNumberObjects = calculationService.searchNumber(null, true);
+        NumberObjectView element1 = actualNumberObjects.get(0);
+        NumberObjectView element2 = actualNumberObjects.get(1);
+        NumberObjectView element3 = actualNumberObjects.get(2);
+        NumberObjectView element4 = actualNumberObjects.get(3);
+
+        assertThat(actualNumberObjects.size()).isEqualTo(4);
+
+        assertThat(element1.getNumber1()).isEqualTo(1);
+        assertThat(element1.getNumber2()).isEqualTo(1);
+        assertThat(element1.getSum()).isEqualTo(2);
+
+        assertThat(element2.getNumber1()).isEqualTo(3);
+        assertThat(element2.getNumber2()).isEqualTo(2);
+        assertThat(element2.getSum()).isEqualTo(5);
+
+        assertThat(element3.getNumber1()).isEqualTo(2);
+        assertThat(element3.getNumber2()).isEqualTo(44);
+        assertThat(element3.getSum()).isEqualTo(46);
+
+        assertThat(element4.getNumber1()).isEqualTo(7);
+        assertThat(element4.getNumber2()).isEqualTo(44);
+        assertThat(element4.getSum()).isEqualTo(51);
+    }
+
+    @Test
+    void searchNumber_numberNotPresentInList() {
+        CalculationService calculationService = new CalculationService();
+        calculationService.addNumberObjectToList(1, 1);
+        calculationService.addNumberObjectToList(2, 44);
+        calculationService.addNumberObjectToList(7, 44);
+        calculationService.addNumberObjectToList(3, 2);
+
+        List<NumberObjectView> actualNumberObjects = calculationService.searchNumber(66, true);
+
+        assertThat(actualNumberObjects.size()).isEqualTo(0);
+    }
 }
