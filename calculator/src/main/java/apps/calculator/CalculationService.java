@@ -25,7 +25,7 @@ public class CalculationService {
         return null;
     }
 
-    public List<NumberObject> searchNumber(int number, boolean isAscending) {
+    public List<NumberObjectView> searchNumber(int number, boolean isAscending) {
         List<NumberObject> newNumberObjects = new ArrayList<>();
         for (NumberObject numberObject : numberObjects) {
             if (number == numberObject.getNumber1() || number == numberObject.getNumber2() || number == numberObject.getSum()) {
@@ -33,7 +33,7 @@ public class CalculationService {
             }
         }
         newNumberObjects.sort(new NumberObjectComparator(isAscending));
-        return newNumberObjects;
+        return numberObjectMapper.toNumberObjectViews(newNumberObjects);
     }
 
     public List<NumberObject> getNumberObjects() {

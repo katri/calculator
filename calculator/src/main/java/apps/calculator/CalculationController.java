@@ -24,7 +24,7 @@ public class CalculationController {
     }
 
     @GetMapping("/search")
-    public List<NumberObject> searchNumber(@RequestParam int number, @RequestParam boolean isAscending) {
+    public List<NumberObjectView> searchNumber(@RequestParam int number, @RequestParam boolean isAscending) {
         return calculationService.searchNumber(number, isAscending);
     }
 }

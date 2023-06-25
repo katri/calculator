@@ -49,24 +49,24 @@ class CalculationServiceTest {
         calculationService.addNumberObjectToList(7, 44);
         calculationService.addNumberObjectToList(3, 2);
 
-        List<NumberObject> actualNumberObjects = calculationService.searchNumber(2, true);
-        NumberObject element1 = actualNumberObjects.get(0);
-        NumberObject element2 = actualNumberObjects.get(1);
-        NumberObject element3 = actualNumberObjects.get(2);
+        List<NumberObjectView> actualNumberObjects = calculationService.searchNumber(2, true);
+        NumberObjectView element1 = actualNumberObjects.get(0);
+        NumberObjectView element2 = actualNumberObjects.get(1);
+        NumberObjectView element3 = actualNumberObjects.get(2);
 
         assertThat(actualNumberObjects.size()).isEqualTo(3);
 
-        assertThat(element1.number1).isEqualTo(1);
-        assertThat(element1.number2).isEqualTo(1);
-        assertThat(element1.sum).isEqualTo(2);
+        assertThat(element1.getNumber1()).isEqualTo(1);
+        assertThat(element1.getNumber2()).isEqualTo(1);
+        assertThat(element1.getSum()).isEqualTo(2);
 
-        assertThat(element2.number1).isEqualTo(3);
-        assertThat(element2.number2).isEqualTo(2);
-        assertThat(element2.sum).isEqualTo(5);
+        assertThat(element2.getNumber1()).isEqualTo(3);
+        assertThat(element2.getNumber2()).isEqualTo(2);
+        assertThat(element2.getSum()).isEqualTo(5);
 
-        assertThat(element3.number1).isEqualTo(2);
-        assertThat(element3.number2).isEqualTo(44);
-        assertThat(element3.sum).isEqualTo(46);
+        assertThat(element3.getNumber1()).isEqualTo(2);
+        assertThat(element3.getNumber2()).isEqualTo(44);
+        assertThat(element3.getSum()).isEqualTo(46);
     }
 
     @Test
@@ -77,23 +77,23 @@ class CalculationServiceTest {
         calculationService.addNumberObjectToList(7, 44);
         calculationService.addNumberObjectToList(3, 2);
 
-        List<NumberObject> actualNumberObjects = calculationService.searchNumber(2, false);
-        NumberObject element1 = actualNumberObjects.get(0);
-        NumberObject element2 = actualNumberObjects.get(1);
-        NumberObject element3 = actualNumberObjects.get(2);
+        List<NumberObjectView> actualNumberObjects = calculationService.searchNumber(2, false);
+        NumberObjectView element1 = actualNumberObjects.get(0);
+        NumberObjectView element2 = actualNumberObjects.get(1);
+        NumberObjectView element3 = actualNumberObjects.get(2);
 
         assertThat(actualNumberObjects.size()).isEqualTo(3);
 
-        assertThat(element1.number1).isEqualTo(2);
-        assertThat(element1.number2).isEqualTo(44);
-        assertThat(element1.sum).isEqualTo(46);
+        assertThat(element1.getNumber1()).isEqualTo(2);
+        assertThat(element1.getNumber2()).isEqualTo(44);
+        assertThat(element1.getSum()).isEqualTo(46);
 
-        assertThat(element2.number1).isEqualTo(3);
-        assertThat(element2.number2).isEqualTo(2);
-        assertThat(element2.sum).isEqualTo(5);
+        assertThat(element2.getNumber1()).isEqualTo(3);
+        assertThat(element2.getNumber2()).isEqualTo(2);
+        assertThat(element2.getSum()).isEqualTo(5);
 
-        assertThat(element3.number1).isEqualTo(1);
-        assertThat(element3.number2).isEqualTo(1);
-        assertThat(element3.sum).isEqualTo(2);
+        assertThat(element3.getNumber1()).isEqualTo(1);
+        assertThat(element3.getNumber2()).isEqualTo(1);
+        assertThat(element3.getSum()).isEqualTo(2);
     }
 }
