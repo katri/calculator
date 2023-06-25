@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
 class CalculationServiceTest {
@@ -17,9 +16,9 @@ class CalculationServiceTest {
         CalculationService calculationService = new CalculationService();
         NumberObject expectedNumberObject = calculationService.createNumberObject(number1, number2);
 
-        assertEquals(2, expectedNumberObject.getNumber1());
-        assertEquals(3, expectedNumberObject.getNumber2());
-        assertEquals(5, expectedNumberObject.getSum());
+        assertThat(expectedNumberObject.getNumber1()).isEqualTo(2);
+        assertThat(expectedNumberObject.getNumber2()).isEqualTo(3);
+        assertThat(expectedNumberObject.getSum()).isEqualTo(5);
     }
 
     @Test
