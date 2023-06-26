@@ -14,11 +14,6 @@ public class CalculationController {
     private CalculationService calculationService;
 
     @GetMapping("/new")
-    public NumberObject addNumbers(@RequestParam int number1, @RequestParam int number2) {
-        return calculationService.createNumberObject(number1, number2);
-    }
-
-    @GetMapping("/add")
     public List<NumberObjectView> addNumberObjectToList(@RequestParam int number1, @RequestParam int number2) {
         return calculationService.addNumberObjectToList(number1, number2);
     }
