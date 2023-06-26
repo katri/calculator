@@ -16,4 +16,4 @@ Application currently provides 2 REST services:
 1. GET service (/new) to add a NumberObject with 2 integers to the list. On saving 2 integres, also their sum is saved as 3rd integer.
 2. GET service (/search) to retrieve from the list objects that contain desired integer.
 - List sorting can be chosen as ascending or descending
-- If integer parameter is left empty, the request wil return full list of all NumberObjects
+- If integer parameter is left empty, the request will return full list of all NumberObjects
